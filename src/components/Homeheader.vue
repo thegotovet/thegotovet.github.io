@@ -5,8 +5,7 @@
             <div class="row align-items-center">
                 <div class="col-lg-12">
                     <nav class="navbar navbar-expand-md navbar-light">
-                        <a class="navbar-brand" href="#"> <img src="../assets/img/logo.png" alt="logo">
-                        <a class="navbar-brand single_page_logo" href="#"> <img src="../assets/img/footer_logo.png" alt="logo"> </a>
+                        <a class="navbar-brand" href="#"> <img src="../assets/img/thegotvetlogo1.png" alt="logo" class="img-fluid" style="max-width:100px">
                         </a>
                         <button class="navbar-toggler" type="button" data-toggle="collapse"
                             data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
@@ -48,8 +47,8 @@
                                     <a class="nav-link" href="#">Contact</a>
                                 </li>
                             </ul>
-                        </div>
                         <a href="#" class="d-none d-sm-block btn_1 ml-5">sign up / sign in</a>
+                        </div>
                     </nav>
                 </div>
             </div>
