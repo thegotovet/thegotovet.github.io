@@ -5,12 +5,29 @@
 </template>
 
 <style>
-  /* @import "~bootstrap/dist/css/bootstrap.css"; */
-  /* @import "./assets/css/owl.carousel.min.css"; */
-  /* @import "./assets/css/all.css";
-  @import "./assets/css/flaticon.css";
-  @import "./assets/css/themify-icons.css";
-  @import "./assets/css/magnific-popup.css";
-  @import "./assets/css/slick.css";
-  @import "./assets/css/style.css"; */
+html{
+  scroll-behavior: smooth;
+}
+/* width */
+::-webkit-scrollbar {
+  width: 15px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey; 
+  border-radius: 10px;
+  border:  10px solid white;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #FF4800; 
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #FF4800; 
+}
 </style>

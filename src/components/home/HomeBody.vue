@@ -1,19 +1,14 @@
 <template>
     <div>
-         <!--::banner part start::-->
+    <!--::banner part start::-->
     <section class="banner_part">
         <div class="container">
-            <div class="row align-items-center justify-content-between">
-                <div class="col-lg-5">
-                    <div class="banner_img d-none d-lg-block">
-                        <img src="../assets/img/banner_img.png" alt="">
-                    </div>
-                </div>
+            <div class="row">
                 <div class="col-lg-6">
                     <div class="banner_text">
                         <div class="banner_text_iner">
-                            <h1><span style="color:#FF4800">Animal</span> Care On The Go</h1>
-                            <p>The first visit is the beginning of a long term relationship. Put their paws in good hands
+                            <h1 style="color:white"><span style="color:#FF4800">Animal</span> Care On The Go</h1>
+                            <p style="color:wheat">The first visit is the beginning of a long term relationship. Put their paws in good hands
                                 Together for the live of your pet, treating your pet you like to be treated.
                             </p>
                             <a href="#" class="btn_2">try for free</a>
@@ -22,24 +17,24 @@
                 </div>
             </div>
         </div>
-        <img src="../assets/img/animate_icon/Ellipse_7.png" alt="" class="feature_icon_1 custom-animation1">
-        <img src="../assets/img/animate_icon/Ellipse_8.png" alt="" class="feature_icon_2 custom-animation2">
-        <img src="../assets/img/animate_icon/Ellipse_1.png" alt="" class="feature_icon_3 custom-animation3">
-        <img src="../assets/img/animate_icon/Ellipse_2.png" alt="" class="feature_icon_4 custom-animation4">
-        <img src="../assets/img/animate_icon/Ellipse_3.png" alt="" class="feature_icon_5 custom-animation5">
-        <img src="../assets/img/animate_icon/Ellipse_4.png" alt="" class="feature_icon_6 custom-animation6">
+        <img src="../../assets/img/animate_icon/Ellipse_7.png" alt="" class="feature_icon_1 custom-animation1">
+        <img src="../../assets/img/animate_icon/Ellipse_8.png" alt="" class="feature_icon_2 custom-animation2">
+        <img src="../../assets/img/animate_icon/Ellipse_1.png" alt="" class="feature_icon_3 custom-animation3">
+        <img src="../../assets/img/animate_icon/Ellipse_2.png" alt="" class="feature_icon_4 custom-animation4">
+        <img src="../../assets/img/animate_icon/Ellipse_3.png" alt="" class="feature_icon_5 custom-animation5">
+        <img src="../../assets/img/animate_icon/Ellipse_4.png" alt="" class="feature_icon_6 custom-animation6">
     </section>
     <!--::banner part start::-->
 
     <!--::use sasu part end::-->
-    <section class="use_sasu padding_top">
+    <section class="use_sasu padding_top" id="features">
         <div class="container">
             <div class="row justify-content-center">
-                <h2 class="col-12 text-center mb-5" style="text-decoration: underline; text-decoration-color:#FF4800">Services</h2>
+                <h2 class="col-12 text-center mb-5" style="text-decoration: underline; text-decoration-color:#FF4800">Features</h2>
                 <div class="col-lg-4 col-sm-6">
                     <div class="single_feature">
                         <div class="single_feature_part">
-                            <img src="../assets/img/icon/feature_icon_1.png" alt="">
+                            <img src="../../assets/img/icon/feature_icon_1.png" alt="">
                             <h4>Request THEGOTOVET</h4>
                             <p>Sign up and request a licensed vet to your home at a flat rate, get top notch diagnosis and treatment.</p>
                         </div>
@@ -48,7 +43,7 @@
                 <div class="col-lg-4 col-sm-6">
                     <div class="single_feature">
                         <div class="single_feature_part">
-                            <img src="../assets/img/icon/feature_icon_2.png" alt="">
+                            <img src="../../assets/img/icon/feature_icon_2.png" alt="">
                             <h4>Order Pets, Lifestock, Services and Accessories</h4>
                             <p>Made great fish shall beast, fourth land also Doesn tree
                                 without lesser likeness he fruit of called gathering day whose
@@ -59,7 +54,7 @@
                 <div class="col-lg-4 col-sm-6">
                     <div class="single_feature">
                         <div class="single_feature_part">
-                            <img src="../assets/img/icon/feature_icon_3.png" alt="">
+                            <img src="../../assets/img/icon/feature_icon_3.png" alt="">
                             <h4>Join Other Professionals</h4>
                             <p>Calling passionate professional Veterinarians and Lab Scientists to become thegotovet </p>
                         </div>
@@ -67,13 +62,14 @@
                 </div>
             </div>
         </div>
-        <img src="../assets/img/animate_icon/Ellipse_1.png" alt="" class="feature_icon_1 custom-animation1">
+        <img src="../../assets/img/animate_icon/Ellipse_1.png" alt="" class="feature_icon_1 custom-animation1">
     </section>
     <!--::use sasu part end::-->
 
-    <section class="use_sasu mt-5">
+    <section class="use_sasu padding_top" id="services">
         <div class="container">
             <div class="row justify-content-center">
+                <h2 class="col-12 text-center mb-5" style="text-decoration: underline; text-decoration-color:#FF4800">Services</h2>
                 <div class="col-lg-4 col-sm-6 my-3">
                     <div class="single_feature">
                         <div class="single_feature_part">
@@ -124,7 +120,7 @@
                 </div>
             </div>
         </div>
-        <img src="../assets/img/animate_icon/Ellipse_1.png" alt="" class="feature_icon_1 custom-animation1">
+        <img src="../../assets/img/animate_icon/Ellipse_1.png" alt="" class="feature_icon_1 custom-animation1">
     </section>
 
     <!--::pricing part start::-->
@@ -132,13 +128,13 @@
     <!--::pricing part end::-->
 
     <!--::about_us part start::-->
-    <section class="review_part padding_bottom">
+    <section class="review_part padding_bottom" id="testimonials">
         <div class="container">
             <div class="row align-items-center justify-content-between">
-                <h2 class="col-12 text-center mb-5" style="text-decoration: underline; text-decoration-color:#FF4800">Testimonies</h2>
+                <h2 class="col-12 text-center mb-5" style="text-decoration: underline; text-decoration-color:#FF4800">Testimonials</h2>
                 <div class="col-md-6 col-lg-6">
                     <div class="review_img">
-                        <img src="../assets/img/review_bg.png" alt="">
+                        <img src="../../assets/img/review_bg.png" alt="">
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-5">
@@ -194,9 +190,11 @@
                 </div>
             </div>
         </div>
-        <img src="../assets/img/animate_icon/Ellipse_4.png" alt="" class="feature_icon_2 custom-animation2">
+        <img src="../../assets/img/animate_icon/Ellipse_4.png" alt="" class="feature_icon_2 custom-animation2">
     </section>
     <!--::about_us part end::-->
+
+    <BlogCarousel /> 
     </div>
 </template>
 
@@ -205,10 +203,32 @@
 </style>
 
 <script>
-    import StoreCarousel from "@/components/home/StoreCarousel"
+    import StoreCarousel from "@/components/home/StoreCarousel";
+    import BlogCarousel from "@/components/home/homeBlog";
+
     export default {
         components: {
-            StoreCarousel
-        }
+            StoreCarousel,
+            BlogCarousel
+        },
+        mounted() {
+            var imgId = 0;
+
+            function changeBgPic() {
+                if (!imgId) {
+                    $(".banner_part").css("background", `url("../img/bgs/bg-new.jpg") center center no-repeat`);
+                    imgId++;
+                } else if (imgId == 1) {
+                    $(".banner_part").css("background", `url("../img/bgs/chick.jpg") center center no-repeat`);
+                    imgId++;
+                } else if (imgId == 2) {
+                    $(".banner_part").css("background", `url("../img/bgs/chicken_bg.jpg") center center no-repeat`);
+                    imgId = 0;
+                }
+            }
+
+            // setTimeout(() => {changeBgPic()}, 5000);
+
+        },
     }
 </script>

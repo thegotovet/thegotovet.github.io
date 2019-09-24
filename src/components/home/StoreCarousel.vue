@@ -1,5 +1,5 @@
 <template>
-    <section class="pricing_part section_padding home_page_pricing">
+    <section class="pricing_part section_padding home_page_pricing" id="store">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-6">
@@ -48,24 +48,35 @@
 
 <script>
 export default {
+    data : () => {
+        return {
+
+        }
+    },
     mounted: () => {
-        $('.owl-carousel').owlCarousel({
-            loop:true,
-            margin:10,
-            nav:true,
-            autoplay: true,
-            responsive:{
-                0:{
-                    items:1
-                },
-                600:{
-                    items:3
-                },
-                1000:{
-                    items:5
+        setTimeout(() => {
+            Vue.nextTick(() => {
+            console.log($())
+            $('.owl-carousel').owlCarousel({
+                loop:true,
+                margin:10,
+                nav:true,
+                autoplay: true,
+                responsive:{
+                    0:{
+                        items:1
+                    },
+                    600:{
+                        items:3
+                    },
+                    1000:{
+                        items:5
+                    }
                 }
-            }
+            })
         })
+        }, 1000)
+        
     }
 }
 </script>

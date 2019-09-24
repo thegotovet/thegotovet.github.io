@@ -2518,6 +2518,7 @@ ul {
     right: auto;
     left: 0;
     top: 5px;
+    width: 50px;
   }
   /* line 236, ../../01 cl html template/03_jun 2019/185 Ecobit SAAS html/sass/_menu.scss */
   .navbar-light .navbar-toggler {
@@ -2572,7 +2573,7 @@ ul {
 
 /* line 289, ../../01 cl html template/03_jun 2019/185 Ecobit SAAS html/sass/_menu.scss */
 .single_page_menu .main-menu-item {
-  justify-content: center;
+  justify-content: flex-end !important;
 }
 
 /* line 291, ../../01 cl html template/03_jun 2019/185 Ecobit SAAS html/sass/_menu.scss */
@@ -2648,10 +2649,21 @@ ul {
 /* line 2, ../../01 cl html template/03_jun 2019/185 Ecobit SAAS html/sass/_banner.scss */
 .banner_part {
   position: relative;
-  background-image: url(../img/banner_bg.png);
-  background-repeat: no-repeat;
-  background-size: 65% 100%;
-  background-position: left top;
+  width: 100%;
+  height: 90vh;
+  background: url("../img/bgs/bg-new.jpg") center center no-repeat;
+  background-size: cover;
+}
+
+.banner_part:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-image: linear-gradient(to bottom right, #002f4b, #dc4225);
+  opacity: .6;
 }
 
 @media (max-width: 991px) {
@@ -2679,6 +2691,7 @@ ul {
 .banner_part .banner_text .banner_text_iner {
   display: table-cell;
   vertical-align: middle;
+  padding-top: 200px;
 }
 
 @media (max-width: 991px) {
@@ -6329,6 +6342,14 @@ h1, h2, h3, h4, h5, h6 {
     text-align: center;
     float: none;
   }
+}
+
+.banner_part>.container,
+.banner_part .row,
+.banner_part .col-lg-6,
+.banner_part .banner_text,
+.banner_part .banner_text_iner {
+  height: 100%!important;
 }
 
 /*# sourceMappingURL=style.css.map */
