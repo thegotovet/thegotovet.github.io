@@ -36,7 +36,6 @@ export default {
     },
     created() {
         eventBus.$on('show', (data) => {
-            console.log(data)
             !data ? this.selectedComponent = "app-sign-in" : this.selectedComponent = "app-sign-up"
         });
     }

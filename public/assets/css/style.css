@@ -6352,4 +6352,20 @@ h1, h2, h3, h4, h5, h6 {
   height: 100%!important;
 }
 
+.navbar-light .navbar-nav .active>.nav-link{
+  color: #FF4800;
+}
+.navbar-brand span,
+.footer_logo_iner span {
+  background-color: #FF4800;
+  color: white;
+  font-size: 30px;
+}
+.navbar-brand small,
+.footer_logo_iner small {
+  font-size: 20px
+}
+.footer_logo_iner small{
+  color: black
+}
 /*# sourceMappingURL=style.css.map */

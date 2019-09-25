@@ -73,9 +73,7 @@ export default {
         }
     },
     mounted: () => {
-        setTimeout(() => {
-            Vue.nextTick(() => {
-            console.log($())
+        Vue.nextTick(() => {
             $('.owl-blog').owlCarousel({
                 loop:true,
                 margin:10,
@@ -94,8 +92,6 @@ export default {
                 }
             })
         })
-        }, 1000)
-        
     }
 }
 </script>

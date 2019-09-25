@@ -7,7 +7,7 @@
                 <div class="col-lg-6">
                     <div class="banner_text">
                         <div class="banner_text_iner">
-                            <h1 style="color:white"><span style="color:#FF4800">Animal</span> Care On The Go</h1>
+                            <h1 style="color:white">Animal Care <br /> On The Go</h1>
                             <p style="color:wheat">The first visit is the beginning of a long term relationship. Put their paws in good hands
                                 Together for the live of your pet, treating your pet you like to be treated.
                             </p>
@@ -27,7 +27,7 @@
     <!--::banner part start::-->
 
     <!--::use sasu part end::-->
-    <section class="use_sasu padding_top" id="features">
+    <section class="use_sasu pt-4" id="features">
         <div class="container">
             <div class="row justify-content-center">
                 <h2 class="col-12 text-center mb-5" style="text-decoration: underline; text-decoration-color:#FF4800">Features</h2>

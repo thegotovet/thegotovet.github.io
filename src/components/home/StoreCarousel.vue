@@ -10,7 +10,7 @@
                 </div>
             </div>
             <div class="row justify-content-center">
-                <div class="owl-carousel owl-theme">
+                <div class="owl-carousel owl-theme store-owl" id="storeOwl">
                     <div class="item">
                         <img src="https://source.unsplash.com/user/berkaygumustekin/300x300/?dog" class="img-fluid" alt="...">
                     </div>
@@ -54,28 +54,10 @@ export default {
         }
     },
     mounted: () => {
-        setTimeout(() => {
-            Vue.nextTick(() => {
-            console.log($())
-            $('.owl-carousel').owlCarousel({
-                loop:true,
-                margin:10,
-                nav:true,
-                autoplay: true,
-                responsive:{
-                    0:{
-                        items:1
-                    },
-                    600:{
-                        items:3
-                    },
-                    1000:{
-                        items:5
-                    }
-                }
-            })
-        })
-        }, 1000)
+        var owl = document.createElement('script');
+        owl.innerText = `$('.store-owl').owlCarousel({loop:true,margin:10,nav:true,autoplay: true,responsive:{0:{items:1},600:{items:3},1000:{ items:5}}}) `;
+        var elem = document.getElementById("storeOwl");
+        elem.parentNode.insertBefore(owl , elem.nextSibling)
         
     }
 }

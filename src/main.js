@@ -1,15 +1,16 @@
 import Vue from "vue";
 import App from "./App.vue";
+import Vuelidate from 'vuelidate';
+
 import router from "./router";
-import VueCarousel from "vue-carousel";
 import jquery from 'jquery';
 
-global.$ = jquery;
+// global.$ = jquery;
 global.Vue = Vue;
-global.jQuery = jquery;
+// global.jQuery = jquery;
 
 Vue.config.productionTip = false;
-Vue.use(VueCarousel);
+Vue.use(Vuelidate);
 
 export const eventBus = new Vue();
 
