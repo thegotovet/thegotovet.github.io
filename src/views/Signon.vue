@@ -2,13 +2,12 @@
     <div>
         <HomeHeader />
         <section id="login" class="container-fluid">
-            <div class="row justify-content-center h-100 align-content-center">
+            <div class="row h-100 justify-content-center align-content-center pt-5" id="container">
                 <div class="col-md-5"></div>
                 <div class="col-md-5">
-                    
-                        <transition name="slide" mode="out-in">
-                            <component :is="selectedComponent"></component>
-                        </transition>
+                    <transition name="slide" mode="out-in">
+                        <component :is="selectedComponent"></component>
+                    </transition>
                 </div>
             </div>
         </section>
@@ -46,7 +45,7 @@ export default {
 #login {
     position: relative;
     width: 100%;
-    height: 100vh;
+    min-height: 100vh;
     background: url("../../public/assets/img/bgs/chick.jpg") center center no-repeat;
     background-size: cover;
 }
@@ -61,7 +60,9 @@ export default {
     background-image: linear-gradient(to bottom right, #002f4b, #dc4225);
     opacity: .6;
 }
-
+#container{
+    min-height: 100vh;
+}
 .slide-enter{
     opacity: 0;
 }
