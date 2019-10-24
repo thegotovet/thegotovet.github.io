@@ -27,7 +27,7 @@
                 <div class="form-group col" :class="{invalid: $v.userData.phone_number.$error}">
                     <label for="phone_number">Phone Number</label>
                     <input v-model.lazy.trim.trim="userData.phone_number" @blur="$v.userData.phone_number.$touch()"
-                        type="number" class="form-control form-control-sm" id="phone_number" placeholder="09011111111">
+                        type="number" class="form-control form-control-sm" id="phone_number" placeholder="090*">
                     <div class="d-flex flex-column" v-if="$v.userData.phone_number.$error">
                         <span v-if="!$v.userData.phone_number.required">Please put in your phone number</span>
                         <span v-if="!$v.userData.phone_number.minLength">Please put in a valid phone</span>
@@ -70,10 +70,9 @@
             <div class="form-row">
                 <div class="form-group col-md-6" :class="{invalid: $v.userData.password.$error}">
                     <label for="password">Password</label>
-                    <input v-model.trim.lazy="userData.password" @input="$v.userData.password.$touch()"
+                    <input v-model.trim.lazy="userData.password" @blur="$v.userData.password.$touch()"
                         type="password" class="form-control form-control-sm" id="password" placeholder="****">
-                        <p>{{$v.userData.password.$error}}</p>
-                    <div class="d-flex flex-column" v-if="$v.userData.password.$error">
+                    <div class="d-flex flex-column" v-if="!$v.userData.password.$error">
                         <span v-if="!$v.userData.password.required">Please put in your password</span>
                         <span v-if="!$v.userData.password.strongPassword">Password must have 1 lowercase, 1 uppercase and 8 characters long</span>
                     </div>

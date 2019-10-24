@@ -2620,11 +2620,6 @@ ul {
   border: 1px solid #ff4800;
 }
 
-/* line 325, ../../01 cl html template/03_jun 2019/185 Ecobit SAAS html/sass/_menu.scss */
-.menu_fixed .main-menu-item ul li .nav-link {
-  color: #fff !important;
-}
-
 /* line 330, ../../01 cl html template/03_jun 2019/185 Ecobit SAAS html/sass/_menu.scss */
 .menu_fixed .main_logo {
   display: block;

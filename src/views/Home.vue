@@ -23,4 +23,7 @@ export default {
 </script>
 
 <style>
+.padding_top{
+  padding-top: 100px
+}
 </style>

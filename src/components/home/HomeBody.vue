@@ -30,7 +30,13 @@
     <section class="use_sasu pt-4" id="features">
         <div class="container">
             <div class="row justify-content-center">
-                <h2 class="col-12 text-center mb-5" style="text-decoration: underline; text-decoration-color:#FF4800">Features</h2>
+                <div class="col-lg-6">
+                    <div class="section_tittle text-center">
+                        <h2 style="text-decoration: underline; text-decoration-color:#FF4800">Features</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-center">
                 <div class="col-lg-4 col-sm-6">
                     <div class="single_feature">
                         <div class="single_feature_part">
@@ -69,7 +75,14 @@
     <section class="use_sasu padding_top" id="services">
         <div class="container">
             <div class="row justify-content-center">
-                <h2 class="col-12 text-center mb-5" style="text-decoration: underline; text-decoration-color:#FF4800">Services</h2>
+                <div class="col-lg-6">
+                    <div class="section_tittle text-center">
+                        <h2 style="text-decoration: underline; text-decoration-color:#FF4800">Services</h2>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row justify-content-center">
                 <div class="col-lg-4 col-sm-6 my-3">
                     <div class="single_feature">
                         <div class="single_feature_part">
@@ -123,12 +136,13 @@
         <img src="../../assets/img/animate_icon/Ellipse_1.png" alt="" class="feature_icon_1 custom-animation1">
     </section>
 
+    <BlogCarousel /> 
     <!--::pricing part start::-->
     <StoreCarousel />
     <!--::pricing part end::-->
 
     <!--::about_us part start::-->
-    <section class="review_part padding_bottom" id="testimonials">
+    <section class="review_part" id="testimonials">
         <div class="container">
             <div class="row align-items-center justify-content-between">
                 <h2 class="col-12 text-center mb-5" style="text-decoration: underline; text-decoration-color:#FF4800">Testimonials</h2>
@@ -194,7 +208,6 @@
     </section>
     <!--::about_us part end::-->
 
-    <BlogCarousel /> 
     </div>
 </template>
 
