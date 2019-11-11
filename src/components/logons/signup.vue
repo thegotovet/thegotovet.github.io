@@ -5,7 +5,8 @@
             <div class="form-row">
                 <div class="form-group col" :class="{invalid: $v.userData.name.$error}">
                     <label for="fulname">Name</label>
-                    <input v-model.lazy.trim="userData.name" @blur="$v.userData.name.$touch()"
+                    <input v-model.trim="userData.name" @input="$v.userData.name.$touch()"
+                        @blur="$v.userData.name.$touch()"
                         type="text" class="form-control form-control-sm" id="fulname" placeholder="Full name">
                     <div class="d-flex flex-column" v-if="$v.userData.name.$error">
                         <span v-if="!$v.userData.name.required">Please put in your name</span>
@@ -16,7 +17,7 @@
             <div class="form-row">
                 <div class="form-group col" :class="{invalid: $v.userData.email.$error}">
                     <label for="email">Email</label>
-                    <input v-model.lazy.trim.trim="userData.email" @blur="$v.userData.email.$touch()"
+                    <input v-model.trim="userData.email" @blur="$v.userData.email.$touch()"
                         type="email" class="form-control form-control-sm" id="email" placeholder="Email">
                     <div class="d-flex flex-column" v-if="$v.userData.email.$error">
                         <span v-if="!$v.userData.email.required">Please put in your email</span>
@@ -26,7 +27,7 @@
                 </div>
                 <div class="form-group col" :class="{invalid: $v.userData.phone_number.$error}">
                     <label for="phone_number">Phone Number</label>
-                    <input v-model.lazy.trim.trim="userData.phone_number" @blur="$v.userData.phone_number.$touch()"
+                    <input v-model.trim="userData.phone_number" @blur="$v.userData.phone_number.$touch()"
                         type="number" class="form-control form-control-sm" id="phone_number" placeholder="090*">
                     <div class="d-flex flex-column" v-if="$v.userData.phone_number.$error">
                         <span v-if="!$v.userData.phone_number.required">Please put in your phone number</span>
@@ -37,7 +38,7 @@
             </div>
             <div class="form-group"  :class="{invalid: $v.userData.address.$error}">
                 <label for="address">Address</label>
-                <input v-model.lazy.trim="userData.address" @blur="$v.userData.address.$touch()"
+                <input v-model.trim="userData.address" @blur="$v.userData.address.$touch()"
                     type="text" class="form-control form-control-sm" id="address" placeholder="1234 Main St">
                 <div class="d-flex" v-if="$v.userData.address.$error">
                     <span v-if="!$v.userData.address.required">Please put in your address</span>
@@ -59,7 +60,7 @@
                 </div>
                 <div class="form-group col-md-6" :class="{invalid: $v.userData.city.$error}">
                     <label for="city">City</label>
-                    <input v-model.lazy.trim="userData.city" @blur="$v.userData.city.$touch()"
+                    <input v-model.trim="userData.city" @blur="$v.userData.city.$touch()"
                         type="text" class="form-control form-control-sm" id="city">
                     <div class="d-flex" v-if="$v.userData.city.$error">
                         <span v-if="!$v.userData.city.required">Please put in your city</span>
@@ -70,7 +71,7 @@
             <div class="form-row">
                 <div class="form-group col-md-6" :class="{invalid: $v.userData.password.$error}">
                     <label for="password">Password</label>
-                    <input v-model.trim.lazy="userData.password" @blur="$v.userData.password.$touch()"
+                    <input v-model.trim="userData.password" @blur="$v.userData.password.$touch()"
                         type="password" class="form-control form-control-sm" id="password" placeholder="****">
                     <div class="d-flex flex-column" v-if="!$v.userData.password.$error">
                         <span v-if="!$v.userData.password.required">Please put in your password</span>
@@ -79,7 +80,7 @@
                 </div>
                 <div class="form-group col-md-6" :class="{invalid: $v.userData.confirm_password.$error}">
                     <label for="ConfPassword">Confirm Password</label>
-                    <input v-model.trim.lazy="userData.confirm_password" @input="$v.userData.confirm_password.$touch()"
+                    <input v-model.trim="userData.confirm_password" @input="$v.userData.confirm_password.$touch()"
                         type="password" class="form-control form-control-sm" id="ConfPassword"
                         placeholder="****">
                     <div class="d-flex flex-column" v-if="$v.userData.confirm_password.$error">
@@ -91,15 +92,19 @@
             </div>
             <div class="form-group">
                 <div class="form-check">
-                    <input v-model.lazy.trim="userData.is_vet" class="form-check-input" type="checkbox" id="vetCheck" value="is_vet">
+                    <input v-model.trim="userData.is_vet" class="form-check-input" type="checkbox" id="vetCheck" value="is_vet">
                     <label class="form-check-label" for="vetCheck">
                         I am a Vet Doctor
                     </label>
                 </div>
             </div>
-            <button type="submit" @click.prevent="submit" :disabled="$v.$invalid" class="btn btn-primary">Sign up</button>
+            <button type="submit" @click.prevent="submit(userData)" v-if="!isLoading" :disabled="$v.$invalid" class="btn">Sign up</button>
+            <button class="btn" type="button" v-else disabled>
+                <span class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true"></span>
+                Loading...
+            </button>
             <div class="d-flex justify-content-between mt-3">
-                <h6 class="text-muted">Already have an account? <a href="#" @click="changeState" style="color:#FF4800" class="text-bold">Log In</a></h6>
+                <h6 class="text-muted">Already have an account? <a href="#" @click="changeState" id="btnlogin" style="color:#FF4800" class="text-bold">Log In</a></h6>
                 <h6 class="text-muted">Forgot Password? <a href="#" style="color:#FF4800" class="text-bold">Recover</a></h6>
             </div>
         </form>
@@ -108,9 +113,10 @@
 </template>
 
 <script>
-import axious from 'axios';
 import { eventBus } from '../../main';
 import { required, email, minLength, sameAs, helpers, numeric } from 'vuelidate/lib/validators';
+import { mapActions, mapGetters } from 'vuex';
+
 export default {
     data() {
         return {
@@ -170,21 +176,18 @@ export default {
         changeState() {
             eventBus.$emit('show', false);
         },
-        submit() {
-            axious.post("/users/register", this.userData)
-                .then(res => {
-                    if (res.data.status) {
-                        toastr.success(res.data.msg);
-                    }
-                })
-                .catch(err => {
-                    toastr.warning(err.response.data.errors || err.response.data.msg);
-                });
-        }
+        ...mapActions([
+            'submit'
+        ])
     },
     mounted()  {
         $('.row.h-100.justify-content-center').addClass("pt-5");
     },
+    computed: {
+        ...mapGetters([
+            'userState', 'isLoading'
+        ])
+    }
 }
 </script>
 
@@ -201,4 +204,8 @@ export default {
         padding: 0px 5px;
         font-size: 11px;
     }
+    .btn{
+    background-color: #FF4800;
+    color: white;
+}
 </style>

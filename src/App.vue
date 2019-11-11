@@ -1,6 +1,8 @@
 <template>
   <div id="app">
-    <router-view />
+    <transition name="slide" mode="out-in">
+      <router-view />
+    </transition>
   </div>
 </template>
 
@@ -29,5 +31,24 @@ html{
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
   background: #FF4800; 
+}
+.slide-enter{
+    opacity: 0;
+}
+
+.slide-enter-active{
+    /* animation: slide_in .5s ease-out forwards; */
+    transition: opacity .5s;
+    opacity: 1;
+}
+
+.slide-leave{
+    
+}
+
+.slide-leave-active{
+    /* animation: slide_out 1s ease-out forwards; */
+    transition: opacity 1s;
+    opacity: 0;
 }
 </style>

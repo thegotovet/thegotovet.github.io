@@ -1,7 +1,9 @@
 <template>
   <div class="home">
     <HomeHeader />
-    <HomeBody />
+    <transition name="slide" mode="out-in">
+      <router-view />
+    </transition>
     <HomeFooter />
   </div>
 </template>
@@ -9,14 +11,12 @@
 <script>
 // @ is an alias to /src
 import HomeHeader from "@/components/home/Homeheader.vue";
-import HomeBody from "@/components/home/HomeBody.vue";
 import HomeFooter from "@/components/home/HomeFooter.vue";
 
 export default {
   name: "home",
   components: {
     HomeHeader,
-    HomeBody,
     HomeFooter
   }
 };

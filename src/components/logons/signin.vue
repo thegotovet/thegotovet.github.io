@@ -6,7 +6,7 @@
                 <div class="form-row">
                     <div class="form-group col" :class="{invalid: $v.userData.email.$error}">
                         <label for="email">Email</label>
-                        <input v-model.lazy.trim.trim="userData.email" @blur="$v.userData.email.$touch()"
+                        <input v-model.trim="userData.email" @input="$v.userData.email.$touch()"
                             type="email" class="form-control form-control-sm" id="email" placeholder="Email">
                         <div class="d-flex flex-column" v-if="$v.userData.email.$error">
                             <span v-if="!$v.userData.email.required">Please put in your email</span>
@@ -17,14 +17,18 @@
                 <div class="form-row">
                     <div class="form-group col" :class="{invalid: $v.userData.password.$error}">
                         <label for="password">Password</label>
-                        <input v-model.lazy.trim="userData.password" @blur="$v.userData.password.$touch()"
+                        <input v-model.trim="userData.password" @input="$v.userData.password.$touch()"
                             type="password" class="form-control form-control-sm" id="password" placeholder="****">
                         <div class="d-flex flex-column" v-if="$v.userData.password.$error">
                             <span v-if="!$v.userData.password.required">Please put in your password</span>
                         </div>
                     </div>
                 </div>
-                <button type="submit" @click.prevent="signIn" :disabled="$v.$invalid" class="btn">Sign in</button>
+                <button type="submit" @click.prevent="signIn(userData)" v-if="!isLoading" :disabled="$v.$invalid" class="btn">Sign in</button>
+                <button class="btn" type="button" v-else disabled>
+                    <span class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true"></span>
+                    Loading...
+                </button>
                 <div class="d-flex justify-content-between mt-3">
                     <h6 class="text-muted">Dont have an account? <a href="#" @click="changeState" style="color:#FF4800" class="text-bold">Sign Up</a></h6>
                     <h6 class="text-muted">Forgot Password? <a href="#" style="color:#FF4800" class="text-bold">Recover</a></h6>
@@ -38,6 +42,7 @@
 import { eventBus } from '../../main';
 import axios from 'axios';
 import { required, email, minLength, sameAs, helpers, numeric } from 'vuelidate/lib/validators';
+import { mapActions, mapGetters } from 'vuex';
 
 export default {
     data() {
@@ -52,23 +57,15 @@ export default {
         changeState() {
             eventBus.$emit('show', true);   
         },
-        signIn() {
-            axios.post("/users/login", this.userData)
-                .then(res => {
-                    if (res.data.status) {
-                        toastr.success(res.data.msg);
-                        this.$router.push('/dashboard');
-                    }
-                })
-                .catch(err => {
-                    toastr.warning(err.response.data.errors || err.response.data.msg);
-                });
-        }
+        ...mapActions([
+            'signIn'
+        ])
     },
     mounted()  {
         $('.row.h-100.justify-content-center').removeClass("pt-5");
         $('.row.h-100.justify-content-center').css("padding-top", "6rem !important");
-    },validations: {
+    },
+    validations: {
         userData : {
             email: {
                 required,
@@ -79,6 +76,11 @@ export default {
             }
         }
     },
+    computed: {
+        ...mapGetters([
+            'userState', 'isLoading'
+        ])
+    }
 }
 </script>
 

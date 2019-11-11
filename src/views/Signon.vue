@@ -1,6 +1,5 @@
 <template>
     <div>
-        <HomeHeader />
         <section id="login" class="container-fluid">
             <div class="row h-100 justify-content-center align-content-center pt-5" id="container">
                 <div class="col-md-5"></div>
@@ -16,7 +15,6 @@
 </template>
 
 <script>
-import HomeHeader from "@/components/home/Homeheader.vue";
 import signup from '../components/logons/signup';
 import signin from '../components/logons/signin';
 
@@ -25,11 +23,10 @@ export default {
     name: "signon",
     data() {
         return {
-            selectedComponent: "app-sign-up"
+            selectedComponent: "app-sign-in"
         }
     },
     components: {
-        HomeHeader,
         appSignUp : signup,
         appSignIn : signin
     },

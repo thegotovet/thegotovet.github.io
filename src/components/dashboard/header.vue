@@ -48,9 +48,7 @@
                 </a>
 
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                    <a class="dropdown-item" href="#">Action</a>
-                    <a class="dropdown-item" href="#">Another action</a>
-                    <a class="dropdown-item" href="#">Something else here</a>
+                    <a class="dropdown-item" @click.prevent="logout" href="#">logout</a>
                 </div>
             </div>
             <h6 class="ml-2">John Doe</h6>
@@ -59,6 +57,7 @@
 </template>
 
 <script>
+import { mapActions } from 'vuex';
 export default {
     mounted() {
         $(document).ready(function() {
@@ -81,7 +80,10 @@ export default {
     methods: {
         toogleSearch: () => {
             this.isSearch = !this.isSearch;
-        }
+        },
+        ...mapActions([
+            'logout'
+        ])
     },
 }
 </script>

@@ -72,10 +72,10 @@ Copyright &copy; All rights reserved | This website is made with <i class="ti-he
                 <div class="col-lg-4">
                     <div class="footer_icon social_icon">
                         <ul class="list-unstyled">
-                            <li><a href="#" class="single_social_icon"><i class="fab fa-facebook-f"></i></a></li>
-                            <li><a href="#" class="single_social_icon"><i class="fab fa-twitter"></i></a></li>
-                            <li><a href="#" class="single_social_icon"><i class="fas fa-globe"></i></a></li>
-                            <li><a href="#" class="single_social_icon"><i class="fab fa-behance"></i></a></li>
+                            <li><a href="#" class="single_social_icon"><i class="ti-facebook"></i></a></li>
+                            <li><a href="#" class="single_social_icon"><i class="ti-instagram"></i></a></li>
+                            <li><a href="#" class="single_social_icon"><i class="ti-youtube"></i></a></li>
+                            <li><a href="#" class="single_social_icon"><i class="ti-twitter"></i></a></li>
                         </ul>
                     </div>
                 </div>

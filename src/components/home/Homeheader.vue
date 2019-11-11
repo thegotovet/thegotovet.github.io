@@ -43,38 +43,15 @@
 <script>
 export default {
     beforeMount() {
-        var owl = document.getElementById('owlCss');
-        var flaticonCss = document.createElement("link");
-        var animateCss = document.createElement("link");
-        var allCss = document.createElement("link");
-        var themifyCss = document.createElement("link");
-        var slickCss = document.createElement("link");
-        var styleCss = document.createElement("link");
 
         var app = document.getElementById('app');
         var customJs = document.createElement('script');
         var slickJs = document.createElement('script');
-
-        animateCss.rel = allCss.rel = flaticonCss.rel = themifyCss.rel = slickCss.rel = styleCss.rel = "stylesheet";
-        
-        animateCss.href = "assets/css/animate.css";
-        allCss.href = "assets/css/all.css";
-        flaticonCss.href = "assets/css/flaticon.css";
-        themifyCss.href = "assets/css/themify-icons.css";
-        slickCss.href = "assets/css/slick.css";
-        styleCss.href = "assets/css/style.css";
         
         customJs.src = "./assets/js/custom.js";
         slickJs.src = "./assets/js/slick.min.js";
 
         customJs.id = "custom";
-        
-        owl.parentNode.insertBefore(styleCss , owl.nextSibling)
-        owl.parentNode.insertBefore(slickCss , owl.nextSibling)
-        owl.parentNode.insertBefore(themifyCss , owl.nextSibling)
-        owl.parentNode.insertBefore(flaticonCss , owl.nextSibling)
-        owl.parentNode.insertBefore(allCss , owl.nextSibling)
-        owl.parentNode.insertBefore(animateCss , owl.nextSibling)
         
         app = document.getElementById('owljs');
         app.parentNode.insertBefore(slickJs, app.nextSibling)

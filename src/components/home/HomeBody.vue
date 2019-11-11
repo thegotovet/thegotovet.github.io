@@ -32,7 +32,7 @@
             <div class="row justify-content-center">
                 <div class="col-lg-6">
                     <div class="section_tittle text-center">
-                        <h2 style="text-decoration: underline; text-decoration-color:#FF4800">Features</h2>
+                        <h2 style="text-decoration: underline; text-decoration-color:#FF4800">Services</h2>
                     </div>
                 </div>
             </div>
@@ -77,7 +77,7 @@
             <div class="row justify-content-center">
                 <div class="col-lg-6">
                     <div class="section_tittle text-center">
-                        <h2 style="text-decoration: underline; text-decoration-color:#FF4800">Services</h2>
+                        <h2 style="text-decoration: underline; text-decoration-color:#FF4800">Features</h2>
                     </div>
                 </div>
             </div>
