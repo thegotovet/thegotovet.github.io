@@ -32,25 +32,26 @@ export const store = new Vuex.Store({
     actions: {
         signIn: ({commit}, payload) => {
             commit("isLoading", true);
+            
             axios.post("/users/login", payload)
-                .then(res => {
-                    if (res.data.status) {
-                        toastr.success(res.data.msg);
-                        localStorage.setItem('token', res.data.token);
-                        commit("isLoading", false);
-                        commit("login");
-                        router.push('/dashboard');
-                    }
-                })
-                .catch(err => {
+            .then(res => {
+                if (res.data.status) {
+                    toastr.success(res.data.msg);
+                    localStorage.setItem('token', res.data.token);
                     commit("isLoading", false);
+                    commit("login");
+                    router.push('/dashboard');
+                }
+            })
+            .catch(err => {
+                commit("isLoading", false);
+                
+                let error = null;
+                if (typeof(err.response) == "undefined" || typeof(err.response.data) == "undefined")
+                    error = "An error occured, please contact admin";
                     
-                    let error = null;
-                    if (typeof(err.response) == "undefined" || typeof(err.response.data) == "undefined")
-                        error = "An error occured, please contact admin";
-                        
-                    toastr.warning(error || err.response.data.errors || err.response.data.msg);
-                });
+                toastr.warning(error || err.response.data.errors || err.response.data.msg);
+            });
         },
         submit: ({commit}, payload) => {
             commit("isLoading", true);

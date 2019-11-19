@@ -8,6 +8,7 @@ import router from "./router";
 import config from "./config";
 import {store} from "./store/store";
 global.Vue = Vue;
+Vue.use(Vuelidate);
 
 axios.defaults.baseURL = config.base_api;
 axios.defaults.headers["content-type"] = "application/json";
@@ -18,7 +19,6 @@ axios.interceptors.request.use(conf => {
 });
 
 Vue.config.productionTip = false;
-Vue.use(Vuelidate);
 Vue.use(VS2);
 
 export const eventBus = new Vue();
@@ -26,5 +26,6 @@ export const eventBus = new Vue();
 new Vue({
   render: h => h(App),
   router,
-  store
+  store,
+  validations: {}
 }).$mount("#app");

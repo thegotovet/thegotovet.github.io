@@ -71,16 +71,16 @@
             <div class="form-row">
                 <div class="form-group col-md-6" :class="{invalid: $v.userData.password.$error}">
                     <label for="password">Password</label>
-                    <input v-model.trim="userData.password" @blur="$v.userData.password.$touch()"
+                    <input v-model.trim.lazy="userData.password" @blur="$v.userData.password.$touch()"
                         type="password" class="form-control form-control-sm" id="password" placeholder="****">
-                    <div class="d-flex flex-column" v-if="!$v.userData.password.$error">
+                    <div class="d-flex flex-column" v-if="$v.userData.password.$error">
                         <span v-if="!$v.userData.password.required">Please put in your password</span>
                         <span v-if="!$v.userData.password.strongPassword">Password must have 1 lowercase, 1 uppercase and 8 characters long</span>
                     </div>
                 </div>
                 <div class="form-group col-md-6" :class="{invalid: $v.userData.confirm_password.$error}">
                     <label for="ConfPassword">Confirm Password</label>
-                    <input v-model.trim="userData.confirm_password" @input="$v.userData.confirm_password.$touch()"
+                    <input v-model.trim.lazy="userData.confirm_password" @input="$v.userData.confirm_password.$touch()"
                         type="password" class="form-control form-control-sm" id="ConfPassword"
                         placeholder="****">
                     <div class="d-flex flex-column" v-if="$v.userData.confirm_password.$error">

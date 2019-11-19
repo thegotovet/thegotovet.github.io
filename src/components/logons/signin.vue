@@ -24,7 +24,7 @@
                         </div>
                     </div>
                 </div>
-                <button type="submit" @click.prevent="signIn(userData)" v-if="!isLoading" :disabled="$v.$invalid" class="btn">Sign in</button>
+                <button type="submit" @click.prevent="submit(userData)" v-if="!isLoading" :disabled="$v.$invalid" class="btn">Sign in</button>
                 <button class="btn" type="button" v-else disabled>
                     <span class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true"></span>
                     Loading...
@@ -39,7 +39,6 @@
 </template>
 
 <script>
-import { eventBus } from '../../main';
 import axios from 'axios';
 import { required, email, minLength, sameAs, helpers, numeric } from 'vuelidate/lib/validators';
 import { mapActions, mapGetters } from 'vuex';
@@ -53,28 +52,31 @@ export default {
             }
         }
     },
+    validations: {
+        userData : {
+            email: { required, email },
+            password: { required }
+        }
+    },
     methods: {
         changeState() {
             eventBus.$emit('show', true);   
         },
-        ...mapActions([
-            'signIn'
-        ])
+        submit(userData) {
+            this.$v.$touch();
+
+            if (!this.$v.$invalid) {
+                //this.signIn();
+            } else 
+                toastr.warning("please fill in the fields appropriately")
+        },
+        // ...mapActions([
+        //     'signIn'
+        // ])
     },
     mounted()  {
         $('.row.h-100.justify-content-center').removeClass("pt-5");
         $('.row.h-100.justify-content-center').css("padding-top", "6rem !important");
-    },
-    validations: {
-        userData : {
-            email: {
-                required,
-                email
-            },
-            password: {
-                required
-            }
-        }
     },
     computed: {
         ...mapGetters([
