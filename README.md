@@ -1,6 +1,6 @@
 # thegotovet
 
-> My incredible Nuxt.js project
+> My dazzling Nuxt.js project
 
 ## Build Setup
 

@@ -5,10 +5,12 @@
             <div class="row align-items-center">
                 <div class="col-lg-12">
                     <nav class="navbar navbar-expand-md navbar-light">
-                        <a class="navbar-brand" href="#"> 
-                            <!-- <img src="../../assets/img/thegotvetlogo1.png" alt="logo" class="img-fluid" style="max-width:100px"> -->
+                        <nuxt-link to="/" class="navbar-brand" tag='a'>
                             <span class="p-1 mr-1">Thegotovet:</span> <small class="muted text-light">Animal lover's corner</small>
-                        </a>
+                        </nuxt-link>
+                        <!-- <a class="navbar-brand" href="#">
+                            <span class="p-1 mr-1">Thegotovet:</span> <small class="muted text-light">Animal lover's corner</small>
+                        </a> -->
                         <button class="navbar-toggler" type="button" data-toggle="collapse"
                             data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                             aria-expanded="false" aria-label="Toggle navigation">
@@ -17,19 +19,12 @@
 
                         <div class="collapse navbar-collapse main-menu-item mr-5" id="navbarSupportedContent">
                             <ul class="navbar-nav">
-                                <router-link to="/" class="nav-item" tag='li' active-class="active" exact><a class="nav-link">Home</a> </router-link>
-                                <!-- <router-link to="#features" class="nav-item" tag='li' active-class="active" exact><a class="nav-link">features</a> </router-link> -->
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#features">Features</a>
-                                </li>
-                                <router-link to="/blog" class="nav-item" tag='li' active-class="active" exact><a class="nav-link">Blog</a> </router-link>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#services">Services</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#store">Store</a>
-                                </li>
-                                <router-link to="/signon" class="nav-item" tag='li' active-class="active" exact><a class="nav-link">sign in / sign up</a> </router-link>
+                                <nuxt-link to="/" class="nav-item" tag='li' active-class="active" exact><a class="nav-link">Home</a> </nuxt-link>
+                                <nuxt-link to="#features" class="nav-item" tag='li' active-class="active" exact><a class="nav-link">Features</a> </nuxt-link>
+                                <nuxt-link to="#services" class="nav-item" tag='li' active-class="active" exact><a class="nav-link">Services</a> </nuxt-link>
+                                <nuxt-link to="#store" class="nav-item" tag='li' active-class="active" exact><a class="nav-link">Store</a> </nuxt-link>
+                                <nuxt-link to="/blog" class="nav-item" tag='li' active-class="active" exact><a class="nav-link">Blog</a> </nuxt-link>
+                                <nuxt-link to="/signon" class="nav-item" tag='li' active-class="active" exact><a class="nav-link">sign in / sign up</a> </nuxt-link>
                             </ul>
                         </div>
                     </nav>
@@ -42,6 +37,5 @@
 
 <script>
 export default {
-    
 }
 </script>

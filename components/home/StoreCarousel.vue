@@ -38,7 +38,7 @@
                 </div>
             </div>
         </div>
-        <img src="../../assets/img/animate_icon/Ellipse_2.png" alt="" class="feature_icon_2 custom-animation2">
+        <img src="/assets/img/animate_icon/Ellipse_2.png" alt="" class="feature_icon_2 custom-animation2">
     </section>
 </template>
 
