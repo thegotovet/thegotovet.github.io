@@ -1,0 +1,199 @@
+h5.w-100{
+    margin-bottom: 15px;
+    position: relative;
+    text-align: center;
+}
+h5.w-100::before{
+    content: " ";
+    position: absolute;
+    width: 75%;
+    border-bottom: 5px solid #FF4800;
+    display: block;
+    top: 40%;
+    left: 12.5%;
+}
+h5.w-100 span{
+    font-size: 1.6rem;
+    font-weight: 900;
+    line-height: 1;
+    padding: 10px 5px 0;
+    position: relative;
+    text-transform: uppercase;
+    z-index: 1;
+    background-color: #fff;
+}
+h5.w-100 span span{
+    color: #FF4800
+}
+.d-flex hr{
+    width: 100% !important;
+}
+.d-flex a {
+    color: #FF4800;
+    font-weight: 500
+}
+.title2{
+    position: relative;
+}
+.title2 span{
+    position: absolute;
+    height: 3px;
+    width: 40%;
+    background-color: #FF4800;
+    top: 21px;
+    right: 170px;
+}
+.title2 + img{
+    border-radius: 10px;
+}
+
+.carousel h5,
+.carousel p {
+    color: #fff !important;
+}
+
+#blogCarousel .carousel-item:after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+#blogCarousel .carousel-inner {
+    border-radius: 40px;
+}
+
+#blogComments {
+    width: 400px;
+    height: 80vh;
+    overflow: hidden;
+}
+
+#comments {
+    height: 100%;
+    margin-right: -50px;
+    /* maximum width of scrollbar */
+    padding-right: 50px;
+    /* maximum width of scrollbar */
+    overflow-y: scroll;
+}
+
+#highlights{
+    background-image: url("../../../public/assets/img/footer_bg.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 130px 0px 25px;
+}
+#highlights h5{
+    text-transform: uppercase;
+    font-size: 1.2rem;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+#highlights span{
+    color: #FF4800; 
+    font-family: 'Yeon Sung', cursive;
+    font-size: 1.5rem;
+}
+
+#newPosts .col-md-4 span{
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+#newPostslist span{
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+#newPostslist h6:first-of-type{
+    font-family: 'Bree Serif', cursive;
+    font-size: 1.5rem;
+}
+
+#latestPosts{
+    width: 400px;
+    height: 80vh;
+    overflow: hidden;
+}
+#posts{
+    height: 100%;
+    margin-right: -50px; /* maximum width of scrollbar */
+    padding-right: 50px; /* maximum width of scrollbar */
+    overflow-y: scroll;
+}
+#latestPosts #posts{
+    text-align: left;
+}
+#latestPosts a {
+    font-family: 'Bree Serif', cursive;
+    color: black;
+    font-size: 1rem;
+    display: block;
+}
+#latestPosts a:hover{
+    font-size: 1.05rem;
+}
+#latestPosts div.py-3, #blogComments div.py-3{
+    background-image: linear-gradient(to right, rgba(255,255,255,1) , rgba(0,0,0,.1));
+    border-radius: 50px;
+}
+#latestPosts h5, #blogComments h5{
+    margin-bottom: 0;
+    margin-top: 10px;
+}
+
+#latestPosts h5 span, #blogComments h5 span{
+    background-image: linear-gradient(to right, rgba(255,255,255,1) , rgba(0,0,0,.1));
+}
+
+#explore{
+    background-image: url("https://www.shutterstock.com/blog/wp-content/uploads/sites/5/2014/04/shutterstock_179623478.jpg");
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 400px;
+    margin: 0 -20px;
+    position: relative;
+}
+#explore::before{
+    background-color: rgba(0, 0, 0, 0.37);
+    content: '';
+    display: block;
+    height: 100%;
+    position: absolute;
+    width: 100%;
+}
+#explore *{
+    position: relative;
+    z-index: 1;
+}
+#explore h6{
+    color: #fff;
+    font-size: 2.7rem;
+    font-weight: 900;
+}
+#explore h6 span{
+    font-family: 'Yeon Sung', cursive;
+}
+#explore .card .card-img-top{
+    border-radius: 40px 0;
+    min-height: 100px;
+}
+#explore .card a{
+    font-family: 'Yeon Sung', cursive;
+    color: white;
+    font-size: 1.3rem;
+    padding-top: 10px;
+    padding-right: 20px;;
+}
+#explore .card a span{
+    color: #FF4800;
+}
+#explore .card a:hover{
+    font-size: 1.5rem;
+}
